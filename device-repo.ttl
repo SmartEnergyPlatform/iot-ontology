@@ -1,0 +1,64 @@
+#  Copyright $today.year InfAI (CC SES)
+#
+#  Licensed under the Apache License, Version 2.0 (the "License");
+#  you may not use this file except in compliance with the License.
+#  You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+#  Unless required by applicable law or agreed to in writing, software
+#  distributed under the License is distributed on an "AS IS" BASIS,
+#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#  See the License for the specific language governing permissions and
+#  limitations under the License.
+
+
+@prefix : <http://www.sepl.wifa.uni-leipzig.de/ontlogies/device-repo#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://www.sepl.wifa.uni-leipzig.de/ontlogies/device-repo> a owl:Ontology .
+
+# http://www.sepl.wifa.uni-leipzig.de/ontlogies/device-repo#SmartObject
+
+:SmartObject a owl:Class .
+
+# http://www.sepl.wifa.uni-leipzig.de/ontlogies/device-repo#Sensor
+
+:Sensor a :SmartObject ;
+	:name "Sensor" .
+
+# http://www.sepl.wifa.uni-leipzig.de/ontlogies/device-repo#Actuator
+
+:Actuator a :SmartObject ;
+	:name "Actuator" .
+
+# http://www.sepl.wifa.uni-leipzig.de/ontlogies/device-repo#Tag
+
+:Tag a :SmartObject ;
+	:name "Tag" .
+
+
+
+
+# http://www.sepl.wifa.uni-leipzig.de/ontlogies/device-repo#Format
+
+:Format a owl:Class .
+
+# http://www.sepl.wifa.uni-leipzig.de/ontlogies/device-repo#xml
+
+:xml a :Format ;
+	:name "XML" .
+
+# http://www.sepl.wifa.uni-leipzig.de/ontlogies/device-repo#json
+
+:json a :Format ;
+	:name "JSON" .
+
+# http://www.sepl.wifa.uni-leipzig.de/ontlogies/device-repo#PlainText
+
+:PlainText a :Format ;
+	:name "Plain Text" .

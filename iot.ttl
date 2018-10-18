@@ -1,0 +1,1173 @@
+#  Copyright $today.year InfAI (CC SES)
+#
+#  Licensed under the Apache License, Version 2.0 (the "License");
+#  you may not use this file except in compliance with the License.
+#  You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+#  Unless required by applicable law or agreed to in writing, software
+#  distributed under the License is distributed on an "AS IS" BASIS,
+#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#  See the License for the specific language governing permissions and
+#  limitations under the License.
+
+@prefix rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ns1:	<http://www.sepl.wifa.uni-leipzig.de/ontlogies/> .
+@prefix owl:	<http://www.w3.org/2002/07/owl#> .
+ns1:device-repo	rdf:type	owl:Ontology .
+@prefix ns3:	<http://www.sepl.wifa.uni-leipzig.de/ontlogies/device-repo#> .
+ns3:xml	rdf:type	ns3:Format ;
+	ns3:name	"XML" .
+ns3:Actuator	rdf:type	ns3:SmartObject ;
+	ns3:name	"Actuator" .
+ns3:Format	rdf:type	owl:Class .
+ns3:PlainText	rdf:type	ns3:Format ;
+	ns3:name	"Plain Text" .
+ns3:Sensor	rdf:type	ns3:SmartObject ;
+	ns3:name	"Sensor" .
+ns3:SmartObject	rdf:type	owl:Class .
+ns3:Tag	rdf:type	ns3:SmartObject ;
+	ns3:name	"Tag" .
+ns3:json	rdf:type	ns3:Format ;
+	ns3:name	"JSON" .
+<iot#86a76eca-38db-4ff9-ac13-ce4ebb0ce418>	rdf:type	ns3:MsgSegmentAssignment ;
+	ns3:name	"metrics" ;
+	ns3:hasFormat	ns3:json ;
+	ns3:hasFormatInfo	<iot#6f975cff-7a97-4eb6-aa92-7b0a070c577f> .
+@prefix ns4:	<iot#> .
+<iot#86a76eca-38db-4ff9-ac13-ce4ebb0ce418>	ns3:hasMsgSegment	ns4:fb88ab4d-a23b-4c70-a81f-995f35ca9d2c ;
+	ns3:hasTypeAssigned	<iot#4c32ea8c-3d3d-4167-a1a9-960345b478c0> .
+<iot#01190060-db2e-4ed0-a424-c82b60f981e4>	rdf:type	ns3:ValueType ;
+	ns3:name	"int" ;
+	ns3:description	"int" .
+@prefix xsd:	<http://www.w3.org/2001/XMLSchema#> .
+<iot#01190060-db2e-4ed0-a424-c82b60f981e4>	ns3:hasBaseType	xsd:integer .
+<iot#03c4baf3-a21a-4507-8a3b-f6c11791c834>	rdf:type	ns3:Service ;
+	ns3:name	"downstart" ;
+	ns3:description	"downstart" ;
+	ns3:hasProtocol	ns4:fec6297b-1dc3-473a-a1a4-5625e36913ec ;
+	ns3:hasServiceType	ns3:Actuator ;
+	ns3:url	"downstart" .
+<iot#042fffe4-ecb6-42a0-8d9b-09c68804baca>	rdf:type	ns3:DeviceClass ;
+	ns3:name	"generated" .
+<iot#083e54dd-4d5b-4a57-b08b-ba7824541482>	rdf:type	ns3:MsgSegmentAssignment ;
+	ns3:name	"status" ;
+	ns3:hasFormat	ns3:json ;
+	ns3:hasMsgSegment	<iot#88cd5b0e-a451-4070-a20d-464ee23742dd> ;
+	ns3:hasTypeAssigned	<iot#01190060-db2e-4ed0-a424-c82b60f981e4> .
+<iot#086d79c5-4f8e-4fef-ae05-b59020f194b7>	rdf:type	ns3:ValueType ;
+	ns3:name	"ZWay-Metrics-LsTUC" ;
+	ns3:description	"zway metrics with level title updatetime and change" ;
+	ns3:hasBaseType	ns3:structure ;
+	ns3:hasField	ns4:a046d7aa-0035-46a5-a7cb-887826bdfc28 ,
+		ns4:a9e59c94-0f20-444a-9985-eac2c65694dc ,
+		<iot#52d301c8-53dc-453d-bfaf-0aa7bc03ae88> ,
+		<iot#70b7ab78-e61f-4a85-8198-de25130d0207> .
+<iot#08834177-0e22-4dfe-9664-73c005a0e6aa>	rdf:type	ns3:MsgSegment ;
+	ns3:name	"payload" .
+<iot#0f605c22-67bb-4fd1-af48-47b31fbaf333>	rdf:type	ns3:FieldType ;
+	ns3:name	"max" ;
+	ns3:hasValueType	ns4:d9937444-b064-497f-938b-4751ad662605 .
+<iot#10540acc-885c-42b0-944c-f36515a9256d>	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	<iot#16f6634a-528a-494a-82bb-5f27affb22a1> .
+<iot#15db1bb8-0473-452d-82b9-258277a58aeb>	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	<iot#1e47e2cb-4c36-4bcf-ab8f-73a5971da4b5> .
+<iot#16f6634a-528a-494a-82bb-5f27affb22a1>	rdf:type	ns3:FieldType ;
+	ns3:name	"updateTime" ;
+	ns3:hasValueType	<iot#1e7b210a-da85-4cc0-a450-7a2773923dc3> .
+<iot#1702522e-ef81-4127-858b-842a027cbd40>	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	<iot#292c8598-5253-445b-9b98-d446eb25877e> .
+<iot#1710c870-04c8-403f-8788-95f953eccf1e>	rdf:type	ns3:Service ;
+	ns3:name	"sepl_get" ;
+	ns3:description	"get currently known device metrics" ;
+	ns3:hasOutput	<iot#856da917-7f72-489c-bab4-1580966244cc> ;
+	ns3:hasProtocol	ns4:fec6297b-1dc3-473a-a1a4-5625e36913ec ;
+	ns3:hasServiceType	ns3:Sensor ;
+	ns3:url	"sepl_get" .
+<iot#19161683-f780-4fd2-86bf-d849510e5fc2>	rdf:type	ns3:Service ;
+	ns3:name	"exact" ;
+	ns3:description	"exact" ;
+	ns3:hasInput	<iot#86a76eca-38db-4ff9-ac13-ce4ebb0ce418> ;
+	ns3:hasProtocol	ns4:fec6297b-1dc3-473a-a1a4-5625e36913ec ;
+	ns3:hasServiceType	ns3:Actuator ;
+	ns3:url	"exact" .
+<iot#1a962c6d-66d5-4986-a0e5-0da25444b0de>	rdf:type	ns3:MsgSegmentAssignment ;
+	ns3:name	"metrics" ;
+	ns3:hasFormat	ns3:json ;
+	ns3:hasFormatInfo	<iot#9588e11a-1e81-41a1-8937-9bcf2c162828> ;
+	ns3:hasMsgSegment	ns4:fb88ab4d-a23b-4c70-a81f-995f35ca9d2c ;
+	ns3:hasTypeAssigned	<iot#89202c70-64e2-4786-8d18-0d307f32cf1b> .
+<iot#1adacc55-ff41-493c-baff-abccfb650ec4>	rdf:type	ns3:MsgSegmentAssignment ;
+	ns3:name	"metrics" ;
+	ns3:hasFormat	ns3:json ;
+	ns3:hasFormatInfo	ns4:bdc896e8-0cf9-4e2e-981c-336d0e4244ba ,
+		<iot#32b38029-2038-420b-9e5c-17848c49660f> ,
+		<iot#28a679e7-547a-4e13-ac60-34a001942f56> ,
+		<iot#5a33543b-7fac-4c46-8d0e-de1edd5d6630> ,
+		<iot#66f99da4-17cd-4473-8c11-e4b304ad4a74> ;
+	ns3:hasMsgSegment	ns4:fb88ab4d-a23b-4c70-a81f-995f35ca9d2c ;
+	ns3:hasTypeAssigned	<iot#9e9382ce-31ae-403a-95e7-7306a41dd533> .
+<iot#1b06e6fa-8f6b-4ca2-ab04-9596e0d425fa>	rdf:type	ns3:ValueType ;
+	ns3:name	"Philips-Hue-On-Field" ;
+	ns3:description	"Set \"on\" field to a Boolean value." ;
+	ns3:hasBaseType	ns3:structure ;
+	ns3:hasField	<iot#68686cc4-e2d8-4a12-89fc-5900657e99d8> .
+<iot#1d31ad28-67f3-4452-9b2b-5ae4e4e3d8b4>	rdf:type	ns3:Service ;
+	ns3:name	"upstop" ;
+	ns3:description	"upstop" ;
+	ns3:hasProtocol	ns4:fec6297b-1dc3-473a-a1a4-5625e36913ec ;
+	ns3:hasServiceType	ns3:Actuator ;
+	ns3:url	"upstop" .
+<iot#1e47e2cb-4c36-4bcf-ab8f-73a5971da4b5>	rdf:type	ns3:FieldType ;
+	ns3:name	"time" ;
+	ns3:hasValueType	ns4:c8c36810-c8e0-403e-b00f-187414a84ccd .
+<iot#1e7b210a-da85-4cc0-a450-7a2773923dc3>	rdf:type	ns3:ValueType ;
+	ns3:name	"ZWay-UpdateTime" ;
+	ns3:description	"zway device updateTime: timestamp of last update. Normally in device metadata. SEPL-Zway-Connector adds this value to metrics" ;
+	ns3:hasBaseType	xsd:integer .
+<iot#1e970838-b72b-4ec0-aebe-15f14d728f3f>	rdf:type	ns3:DeviceType ;
+	ns3:name	"ZWay-Battery" ;
+	ns3:description	"zway battery sensor" ;
+	ns3:hasDeviceClass	<iot#71bd0260-56bd-4cb0-9797-862d52aee21e> ;
+	ns3:hasService	<iot#616df637-68eb-450f-836c-1a29cadf5a72> ;
+	ns3:vendor	<iot#92de07c9-6b90-4437-9d05-1e88291722f3> .
+<iot#2161f823-a4ea-4949-9c01-a588a7dcc8f1>	rdf:type	ns3:FieldType ;
+	ns3:name	"title" ;
+	ns3:hasValueType	ns4:c8c36810-c8e0-403e-b00f-187414a84ccd .
+<iot#22e1f04d-03d4-4c69-9726-a0b0ae75fc4c>	rdf:type	ns3:MsgSegmentAssignment ;
+	ns3:name	"metrics" ;
+	ns3:hasFormat	ns3:json ;
+	ns3:hasFormatInfo	<iot#9239f86e-9471-4d1a-a282-60a998142ed2> ,
+		ns4:d79f1c9c-f02f-428c-a5f8-efc3e43f46fb ,
+		ns4:bf8c0aca-af7e-49cb-a048-092400f88d87 ,
+		<iot#3377b2db-53e4-4b3e-a521-052a3043cbd7> ,
+		<iot#23b46dd7-86c4-467c-9764-f2edfbe4826f> ,
+		<iot#10540acc-885c-42b0-944c-f36515a9256d> ;
+	ns3:hasMsgSegment	ns4:fb88ab4d-a23b-4c70-a81f-995f35ca9d2c ;
+	ns3:hasTypeAssigned	<iot#7c9c8e2b-3b73-4f54-bda0-0308dbf1cb73> .
+<iot#23b46dd7-86c4-467c-9764-f2edfbe4826f>	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	ns4:f114d992-5361-40ca-b1c7-db6dc42569c4 .
+<iot#24e5bb75-6d18-4e4e-87eb-ea4e554a14fb>	rdf:type	ns3:Vendor ;
+	ns3:name	"generated" .
+<iot#2568cb76-1bd6-4752-8c4e-10491d9d4cda>	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatFlag	"true or false" ;
+	ns3:hasFormatinfoForField	<iot#68686cc4-e2d8-4a12-89fc-5900657e99d8> .
+<iot#28a679e7-547a-4e13-ac60-34a001942f56>	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	ns4:a927fb86-e96d-4e2a-b880-fbdeeede3077 .
+<iot#28d9d690-4873-4a44-8da1-e4ba3c081371>	rdf:type	ns3:MsgSegmentAssignment ;
+	ns3:name	"value" ;
+	ns3:hasFormat	ns3:json ;
+	ns3:hasFormatInfo	<iot#54391f0b-dcfc-4e4c-8d7a-83a54cf6c5c6> ,
+		ns4:ae5ef64c-dfaa-4966-b320-1334ee9c2ed9 ,
+		<iot#80f2e1b9-30f3-423a-a626-603a8850426b> ,
+		<iot#9405bb9f-d1f7-40ec-b082-a886c810cd58> ;
+	ns3:hasMsgSegment	<iot#88cd5b0e-a451-4070-a20d-464ee23742dd> ;
+	ns3:hasTypeAssigned	<iot#3489a4f0-5135-489d-86f7-6d7b949a2998> .
+<iot#292c8598-5253-445b-9b98-d446eb25877e>	rdf:type	ns3:FieldType ;
+	ns3:name	"updateTime" ;
+	ns3:hasValueType	<iot#1e7b210a-da85-4cc0-a450-7a2773923dc3> .
+<iot#2c64321e-fdba-4bf2-ba9e-edccde9a3e14>	rdf:type	ns3:MsgSegmentAssignment ;
+	ns3:name	"metrics" ;
+	ns3:hasFormat	ns3:json ;
+	ns3:hasFormatInfo	<iot#1702522e-ef81-4127-858b-842a027cbd40> ,
+		<iot#3c9a676f-03e9-4fee-b0df-cff0e9b96ca1> ,
+		ns4:df3e8406-8667-444a-b04d-1267a0434174 ;
+	ns3:hasMsgSegment	ns4:fb88ab4d-a23b-4c70-a81f-995f35ca9d2c ;
+	ns3:hasTypeAssigned	<iot#4d8c4d5a-7f54-4397-81aa-dad483657978> .
+<iot#32b38029-2038-420b-9e5c-17848c49660f>	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	ns4:ead901a4-4b33-4192-8385-a56156a3119d .
+<iot#3377b2db-53e4-4b3e-a521-052a3043cbd7>	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	<iot#0f605c22-67bb-4fd1-af48-47b31fbaf333> .
+<iot#3489a4f0-5135-489d-86f7-6d7b949a2998>	rdf:type	ns3:ValueType ;
+	ns3:name	"Philips-Hue-On-Bri-Sat-Hue-Fields" ;
+	ns3:description	"Set values of \"on\" (Boolean), \"bri\" (0-255), \"sat\" (0-255) and \"hue\" (0-65535) fields." ;
+	ns3:hasBaseType	ns3:structure ;
+	ns3:hasField	<iot#48059889-2256-4593-ab15-b83b51b6b35b> ,
+		<iot#6a9e9d3a-c950-4b90-a0a1-c6edac8b1317> ,
+		ns4:d25f2965-c722-4a57-8ae4-9debacfe0576 ,
+		ns4:b2a95602-f7fe-4c28-ba39-0f0c6c7fed94 .
+<iot#34ba21f1-c63d-48b2-8dd9-cd127409490b>	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatFlag	"0-65535" ;
+	ns3:hasFormatinfoForField	<iot#6a9e9d3a-c950-4b90-a0a1-c6edac8b1317> .
+<iot#378ee116-f319-43c2-b5f3-693a4f037d3f>	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	ns4:a046d7aa-0035-46a5-a7cb-887826bdfc28 .
+<iot#37ff5298-a7dd-4744-9080-7cfdbda5dc72>	rdf:type	ns3:MsgSegment ;
+	ns3:name	"metadata" .
+<iot#3b4c468a-e5c4-47e0-b60e-c70d6f786a6e>	rdf:type	ns3:FieldType ;
+	ns3:name	"level" ;
+	ns3:hasValueType	ns4:d9937444-b064-497f-938b-4751ad662605 .
+<iot#3c9a676f-03e9-4fee-b0df-cff0e9b96ca1>	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	ns4:a9aed425-ca8b-43fa-a96a-56e24e35ca09 .
+<iot#40881db8-d5c5-4949-8e49-22284e4b31b4>	rdf:type	ns3:Service ;
+	ns3:name	"update" ;
+	ns3:description	"update device metrics to zway (zwave-controller) as soon as possible" ;
+	ns3:hasProtocol	ns4:fec6297b-1dc3-473a-a1a4-5625e36913ec ;
+	ns3:hasServiceType	ns3:Actuator ;
+	ns3:url	"update" .
+<iot#40c41048-3910-468f-ae74-7425dde90963>	rdf:type	ns3:DeviceType ;
+	ns3:name	"Landis+Gyr-Smart-Meter" ;
+	ns3:description	"Landis+Gyr smart meters." ;
+	ns3:hasDeviceClass	<iot#4bbe9a8d-de29-4073-8788-c0329472252b> ;
+	ns3:hasService	ns4:db16382e-375b-4c5f-afc3-f231f80b13b0 ;
+	ns3:vendor	<iot#6838476b-ac5b-4121-bb6d-61a1d86925f8> .
+<iot#40ebc663-56fb-4d3c-b0e0-8524701a653b>	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	<iot#76ff9d33-7b9d-414a-9e70-507c9cc43a16> .
+<iot#43982ac9-c3df-4300-952d-ff3c9cfb6cec>	rdf:type	ns3:FieldType ;
+	ns3:name	"title" ;
+	ns3:hasValueType	ns4:c8c36810-c8e0-403e-b00f-187414a84ccd .
+<iot#48059889-2256-4593-ab15-b83b51b6b35b>	rdf:type	ns3:FieldType ;
+	ns3:name	"on" ;
+	ns3:hasValueType	<iot#939963e5-1ab0-44e0-8fb4-5235fd6f5363> .
+<iot#48ab846b-fb9e-4fde-85a2-2427c900e3f8>	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	ns4:a61474af-8736-4cbf-8117-0678e10f2ce8 .
+<iot#4bbc743f-7d9f-4ac6-b26a-2d4f902c7baf>	rdf:type	ns3:FieldType ;
+	ns3:name	"value" ;
+	ns3:hasValueType	ns4:cb0dc896-6d89-4e0c-ac59-33eceed512b0 .
+<iot#4bbe9a8d-de29-4073-8788-c0329472252b>	rdf:type	ns3:DeviceClass ;
+	ns3:name	"SmartMeter" .
+<iot#4c32ea8c-3d3d-4167-a1a9-960345b478c0>	rdf:type	ns3:ValueType ;
+	ns3:name	"ZWay-Metrics-Li" ;
+	ns3:description	"zway metrics only with level as integer" ;
+	ns3:hasBaseType	ns3:structure ;
+	ns3:hasField	ns4:f4cfcd68-cd86-4551-bcdd-5f33f69d071c .
+<iot#4d7de275-18dd-4e1f-be6d-a348c6837b3d>	rdf:type	ns3:FieldType ;
+	ns3:name	"updateTime" ;
+	ns3:hasValueType	<iot#1e7b210a-da85-4cc0-a450-7a2773923dc3> .
+<iot#4d8c4d5a-7f54-4397-81aa-dad483657978>	rdf:type	ns3:ValueType ;
+	ns3:name	"ZWay-Metrics-LiTU" ;
+	ns3:description	"zway metrics with level (integer) , title and updateTime" ;
+	ns3:hasBaseType	ns3:structure ;
+	ns3:hasField	<iot#292c8598-5253-445b-9b98-d446eb25877e> ,
+		ns4:cb6029fd-f294-4762-a07e-26a8c01c7213 ,
+		ns4:a9aed425-ca8b-43fa-a96a-56e24e35ca09 .
+<iot#4f20f3fc-276e-4e55-be6b-8d4ff136d5db>	rdf:type	ns3:Service ;
+	ns3:name	"update" ;
+	ns3:description	"update device metrics to zway (zwave-controller) as soon as possible" ;
+	ns3:hasProtocol	ns4:fec6297b-1dc3-473a-a1a4-5625e36913ec ;
+	ns3:hasServiceType	ns3:Actuator ;
+	ns3:url	"update" .
+<iot#4ff00c34-7a8a-48e1-8555-73d2aa297685>	rdf:type	ns3:ValueType ;
+	ns3:name	"ZWay-Metrics-SensorMultilevel" ;
+	ns3:description	"zway metrics for sensorMultilevel with probeTitle, scaleTitle, level, title and updateTime" ;
+	ns3:hasBaseType	ns3:structure ;
+	ns3:hasField	<iot#4d7de275-18dd-4e1f-be6d-a348c6837b3d> ,
+		<iot#2161f823-a4ea-4949-9c01-a588a7dcc8f1> ,
+		<iot#90bb9cfe-f220-4bca-82fd-80acd79c5dcf> ,
+		ns4:b2f326ef-e4f1-49a6-b087-f8a8ac1e6b53 ,
+		ns4:a59ae5da-8558-4c8d-9c78-5075545150b3 .
+<iot#523041ef-368f-40e2-8c76-a61efb283f84>	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	ns4:a9e59c94-0f20-444a-9985-eac2c65694dc .
+<iot#52577d44-3063-4c5d-8506-079ecfa314c5>	rdf:type	ns3:Service ;
+	ns3:name	"max" ;
+	ns3:description	"max" ;
+	ns3:hasProtocol	ns4:fec6297b-1dc3-473a-a1a4-5625e36913ec ;
+	ns3:hasServiceType	ns3:Actuator ;
+	ns3:url	"max" .
+<iot#52d301c8-53dc-453d-bfaf-0aa7bc03ae88>	rdf:type	ns3:FieldType ;
+	ns3:name	"level" ;
+	ns3:hasValueType	<iot#6e391de6-e4cb-4728-a80e-425239d8ce17> .
+<iot#5412ec74-b5e1-4b9e-b711-6d7cac533531>	rdf:type	ns3:FieldType ;
+	ns3:name	"probeTitle" ;
+	ns3:hasValueType	ns4:c8c36810-c8e0-403e-b00f-187414a84ccd .
+<iot#54391f0b-dcfc-4e4c-8d7a-83a54cf6c5c6>	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatFlag	"0-65535" ;
+	ns3:hasFormatinfoForField	<iot#6a9e9d3a-c950-4b90-a0a1-c6edac8b1317> .
+<iot#55007953-ce00-44a8-9f82-255cde921e1c>	rdf:type	ns3:Service ;
+	ns3:name	"on_off" ;
+	ns3:description	"Turn all lights on or off." ;
+	ns3:hasInput	<iot#877e576d-c12a-469c-82fb-c3738322fce4> ;
+	ns3:hasOutput	ns4:ee5fadb8-aeda-4f4c-a74f-b8b9a43fa7b0 ;
+	ns3:hasProtocol	ns4:d6a462c5-d4e0-4396-b3f3-28cd37b647a8 ;
+	ns3:hasServiceType	ns3:Actuator ;
+	ns3:url	"group_action_on_off" .
+<iot#58b47359-a3fe-4e5a-84a2-08bf7b83395d>	rdf:type	ns3:DeviceType ;
+	ns3:name	"Philips-Hue-Light" ;
+	ns3:description	"Philips Hue smart lights." ;
+	ns3:hasDeviceClass	ns4:f17db031-090f-4e3d-a314-a8d3c416847e ;
+	ns3:hasService	<iot#825abcb6-2611-4f72-b9d7-aa0182f6e05c> ,
+		ns4:a476fab2-823b-4e8e-8546-6852e8e83089 ;
+	ns3:vendor	ns4:d98008c4-b9ec-4265-b476-e6c769e914ae .
+<iot#5a33543b-7fac-4c46-8d0e-de1edd5d6630>	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	<iot#3b4c468a-e5c4-47e0-b60e-c70d6f786a6e> .
+<iot#5ac5eeb8-5e2e-4cee-9468-862105ab3782>	rdf:type	ns3:Service ;
+	ns3:name	"on" ;
+	ns3:description	"on" ;
+	ns3:hasProtocol	ns4:fec6297b-1dc3-473a-a1a4-5625e36913ec ;
+	ns3:hasServiceType	ns3:Actuator ;
+	ns3:url	"on" .
+<iot#5bc1fb72-b4c0-4351-91ca-dcc342c21071>	rdf:type	ns3:Service ;
+	ns3:name	"update" ;
+	ns3:description	"update device metrics to zway (zwave-controller) as soon as possible" ;
+	ns3:hasProtocol	ns4:fec6297b-1dc3-473a-a1a4-5625e36913ec ;
+	ns3:hasServiceType	ns3:Actuator ;
+	ns3:url	"update" .
+<iot#5c290b9e-fa92-4a1a-a294-7303188e0076>	rdf:type	ns3:Service ;
+	ns3:name	"sepl_get" ;
+	ns3:description	"get currently known device metrics (metrics.level : \"on\" || \"off\")" ;
+	ns3:hasOutput	ns4:fb4c7076-7cbd-47a9-b958-7c98d97a7a7e ;
+	ns3:hasProtocol	ns4:fec6297b-1dc3-473a-a1a4-5625e36913ec ;
+	ns3:hasServiceType	ns3:Sensor ;
+	ns3:url	"sepl_get" .
+<iot#5eb6eeaa-346e-4c74-a0e0-00ae20599553>	rdf:type	ns3:Service ;
+	ns3:name	"sepl_get" ;
+	ns3:description	"get currently known device metrics" ;
+	ns3:hasOutput	<iot#22e1f04d-03d4-4c69-9726-a0b0ae75fc4c> ;
+	ns3:hasProtocol	ns4:fec6297b-1dc3-473a-a1a4-5625e36913ec ;
+	ns3:hasServiceType	ns3:Sensor ;
+	ns3:url	"sepl_get" .
+<iot#5ed39720-4299-4146-a103-00347acd02d5>	rdf:type	ns3:FieldType ;
+	ns3:name	"updateTime" ;
+	ns3:hasValueType	<iot#1e7b210a-da85-4cc0-a450-7a2773923dc3> .
+<iot#604e86bf-a5aa-4d5a-9eac-86c2ff503afc>	rdf:type	ns3:Protocol ;
+	ns3:name	"mqtt-connector" ;
+	ns3:description	"topic: optional, forces use of given topic. As default, the computed endpoint will be used as topic. payload contains the content to be send. A service using this protocol may have only inputs and no outputs or only outputs and no inputs. the topic may only be used as input." ;
+	ns3:hasMsgSegment	<iot#8ee6436c-4eda-4d49-a432-ce9342b21454> ,
+		<iot#08834177-0e22-4dfe-9664-73c005a0e6aa> ;
+	ns3:protocol_handler_url	"mqtt" .
+<iot#616df637-68eb-450f-836c-1a29cadf5a72>	rdf:type	ns3:Service ;
+	ns3:name	"sepl_get" ;
+	ns3:description	"get currently known device state" ;
+	ns3:hasOutput	<iot#1adacc55-ff41-493c-baff-abccfb650ec4> ;
+	ns3:hasProtocol	ns4:fec6297b-1dc3-473a-a1a4-5625e36913ec ;
+	ns3:hasServiceType	ns3:Sensor ;
+	ns3:url	"sepl_get" .
+<iot#61ad8969-fec1-40cb-9f24-c3c2b3b444d1>	rdf:type	ns3:Service ;
+	ns3:name	"off" ;
+	ns3:description	"off" ;
+	ns3:hasProtocol	ns4:fec6297b-1dc3-473a-a1a4-5625e36913ec ;
+	ns3:hasServiceType	ns3:Actuator ;
+	ns3:url	"off" .
+<iot#65b4607a-e47a-468d-8d70-5c812378db64>	rdf:type	ns3:ValueType ;
+	ns3:name	"ZWay-Metrics-SensorBinary" ;
+	ns3:description	"zway metrics for sensorBinary with probeTitle, level, title and updateTime" ;
+	ns3:hasBaseType	ns3:structure ;
+	ns3:hasField	ns4:a61474af-8736-4cbf-8117-0678e10f2ce8 ,
+		ns4:cfa8b896-128d-463a-aaec-ebe627c4cc7a ,
+		ns4:ecc73509-e4eb-4ec6-8488-7c89b6f3479c ,
+		<iot#5412ec74-b5e1-4b9e-b711-6d7cac533531> .
+<iot#66f99da4-17cd-4473-8c11-e4b304ad4a74>	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	ns4:e8acb8f1-c5ee-47ec-b270-70b82de831eb .
+<iot#6838476b-ac5b-4121-bb6d-61a1d86925f8>	rdf:type	ns3:Vendor ;
+	ns3:name	"Landis+Gyr" .
+<iot#68686cc4-e2d8-4a12-89fc-5900657e99d8>	rdf:type	ns3:FieldType ;
+	ns3:name	"on" ;
+	ns3:hasValueType	<iot#939963e5-1ab0-44e0-8fb4-5235fd6f5363> .
+<iot#6a9e9d3a-c950-4b90-a0a1-c6edac8b1317>	rdf:type	ns3:FieldType ;
+	ns3:name	"hue" ;
+	ns3:hasValueType	<iot#01190060-db2e-4ed0-a424-c82b60f981e4> .
+<iot#6af4c918-eadd-413e-a189-9212d4eea718>	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	ns4:cfa8b896-128d-463a-aaec-ebe627c4cc7a .
+<iot#6e391de6-e4cb-4728-a80e-425239d8ce17>	rdf:type	ns3:ValueType ;
+	ns3:name	"ZWay-Level-String" ;
+	ns3:description	"zway metrics level as string" ;
+	ns3:hasBaseType	xsd:string .
+<iot#6f975cff-7a97-4eb6-aa92-7b0a070c577f>	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	ns4:f4cfcd68-cd86-4551-bcdd-5f33f69d071c .
+<iot#7075b34a-23b5-49ba-9723-867613205e0c>	rdf:type	ns3:DeviceType ;
+	ns3:name	"ZWay-SwitchBinary" ;
+	ns3:description	"zway switchBinary" ;
+	ns3:hasDeviceClass	ns4:f15df4d2-0d33-4b18-9a77-d88444515bb0 ;
+	ns3:hasService	ns4:ec1c4f0a-e3ca-4c22-bd47-18f28096c329 ,
+		ns4:deb8c74e-d556-4ab6-b2d8-4f1a74d528a6 ,
+		<iot#4f20f3fc-276e-4e55-be6b-8d4ff136d5db> ,
+		<iot#5c290b9e-fa92-4a1a-a294-7303188e0076> ;
+	ns3:vendor	<iot#92de07c9-6b90-4437-9d05-1e88291722f3> .
+<iot#70b7ab78-e61f-4a85-8198-de25130d0207>	rdf:type	ns3:FieldType ;
+	ns3:name	"change" ;
+	ns3:hasValueType	ns4:c8c36810-c8e0-403e-b00f-187414a84ccd .
+<iot#71bd0260-56bd-4cb0-9797-862d52aee21e>	rdf:type	ns3:DeviceClass ;
+	ns3:name	"battery" .
+<iot#71e5203a-3a60-44e7-9979-60f0a65000ee>	rdf:type	ns3:FieldType ;
+	ns3:name	"min" ;
+	ns3:hasValueType	ns4:d9937444-b064-497f-938b-4751ad662605 .
+<iot#73accdc1-7e60-44dd-9a2a-10e66e59d57c>	rdf:type	ns3:Service ;
+	ns3:name	"sepl_get" ;
+	ns3:description	"get currently known device metrics (metrics.level : \"on\" || \"off\")" ;
+	ns3:hasOutput	ns4:ea0a0286-85a4-4885-9884-42209bfbda03 ;
+	ns3:hasProtocol	ns4:fec6297b-1dc3-473a-a1a4-5625e36913ec ;
+	ns3:hasServiceType	ns3:Sensor ;
+	ns3:url	"sepl_get" .
+<iot#73f93dbf-e8bd-423f-ab68-fa69c9d16f00>	rdf:type	ns3:FieldType ;
+	ns3:name	"level" ;
+	ns3:hasValueType	<iot#6e391de6-e4cb-4728-a80e-425239d8ce17> .
+<iot#74806075-4c2a-47a3-9694-685de26add3d>	rdf:type	ns3:DeviceClass ;
+	ns3:name	"sensorBinary" .
+<iot#75b4e123-caab-40bd-aeb0-1731e9aa3e2d>	rdf:type	ns3:DeviceType ;
+	ns3:name	"ZWay-SwitchControl" ;
+	ns3:description	"zway switchControl" ;
+	ns3:hasDeviceClass	ns4:a7afe8cf-0742-422d-bbf2-5a99ff12fb73 ;
+	ns3:hasService	ns4:d7a75a8e-4008-4f9d-ba97-6f2047d7d17e ,
+		ns4:c61563e3-a2aa-452b-ad47-e128dbecd9a9 ,
+		<iot#87b62ba7-5fe4-4682-b7d0-1b02726d42d3> ,
+		ns4:fb5ef22b-3d20-466c-bd00-5617e5c68f8f ,
+		<iot#03c4baf3-a21a-4507-8a3b-f6c11791c834> ,
+		<iot#1d31ad28-67f3-4452-9b2b-5ae4e4e3d8b4> ,
+		<iot#5ac5eeb8-5e2e-4cee-9468-862105ab3782> ,
+		<iot#5bc1fb72-b4c0-4351-91ca-dcc342c21071> ,
+		<iot#73accdc1-7e60-44dd-9a2a-10e66e59d57c> ;
+	ns3:vendor	<iot#92de07c9-6b90-4437-9d05-1e88291722f3> .
+<iot#76ff9d33-7b9d-414a-9e70-507c9cc43a16>	rdf:type	ns3:FieldType ;
+	ns3:name	"unit" ;
+	ns3:hasValueType	ns4:c8c36810-c8e0-403e-b00f-187414a84ccd .
+<iot#7794ff5b-f796-4e25-892b-7b5f6cfe62da>	rdf:type	ns3:MsgSegmentAssignment ;
+	ns3:name	"status" ;
+	ns3:hasFormat	ns3:json ;
+	ns3:hasMsgSegment	<iot#88cd5b0e-a451-4070-a20d-464ee23742dd> ;
+	ns3:hasTypeAssigned	<iot#01190060-db2e-4ed0-a424-c82b60f981e4> .
+<iot#791fc7b8-f641-49ca-af9e-7db01480dc56>	rdf:type	ns3:MsgSegmentAssignment ;
+	ns3:name	"reading" ;
+	ns3:hasFormat	ns3:json ;
+	ns3:hasFormatInfo	ns4:f52749e2-aa11-4187-acef-1de317f19e9f ,
+		<iot#40ebc663-56fb-4d3c-b0e0-8524701a653b> ,
+		<iot#15db1bb8-0473-452d-82b9-258277a58aeb> ;
+	ns3:hasMsgSegment	<iot#88cd5b0e-a451-4070-a20d-464ee23742dd> ;
+	ns3:hasTypeAssigned	ns4:b81351e3-28f1-4dc9-8471-61f7d930c305 .
+<iot#7a766823-6311-4276-a00c-ee170a43d96d>	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	ns4:ecc73509-e4eb-4ec6-8488-7c89b6f3479c .
+<iot#7c9c8e2b-3b73-4f54-bda0-0308dbf1cb73>	rdf:type	ns3:ValueType ;
+	ns3:name	"ZWay-Metrics-Thermostat" ;
+	ns3:description	"zway metrics for thermostat with scaleTitle, min, max, level, title and updateTime" ;
+	ns3:hasBaseType	ns3:structure ;
+	ns3:hasField	<iot#0f605c22-67bb-4fd1-af48-47b31fbaf333> ,
+		<iot#16f6634a-528a-494a-82bb-5f27affb22a1> ,
+		<iot#71e5203a-3a60-44e7-9979-60f0a65000ee> ,
+		<iot#43982ac9-c3df-4300-952d-ff3c9cfb6cec> ,
+		ns4:f114d992-5361-40ca-b1c7-db6dc42569c4 ,
+		ns4:d930dd4d-03d1-4ab0-bd44-781bac4414a9 .
+<iot#7e22bb46-a235-4cc3-83ff-baecacd2f3df>	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	<iot#70b7ab78-e61f-4a85-8198-de25130d0207> .
+<iot#7e3b5f0a-6d3f-46e9-a6f7-ac140e76d674>	rdf:type	ns3:Service ;
+	ns3:name	"on" ;
+	ns3:description	"on" ;
+	ns3:hasProtocol	ns4:fec6297b-1dc3-473a-a1a4-5625e36913ec ;
+	ns3:hasServiceType	ns3:Actuator ;
+	ns3:url	"on" .
+<iot#80550847-a151-4de4-806a-50503b2fdf62>	rdf:type	ns3:DeviceType ;
+	ns3:name	"ZWay-SwitchMultilevel" ;
+	ns3:description	"zway switchMultilevel" ;
+	ns3:hasDeviceClass	ns4:ef4966e5-28d0-4e81-8054-85dde9857012 ;
+	ns3:hasService	<iot#40881db8-d5c5-4949-8e49-22284e4b31b4> ,
+		<iot#52577d44-3063-4c5d-8506-079ecfa314c5> ,
+		<iot#61ad8969-fec1-40cb-9f24-c3c2b3b444d1> ,
+		ns4:e1c246a0-d9f3-40ce-ac3a-8ac2ea0091b2 ,
+		ns4:dc3c326c-8420-4af1-be0d-dcabfdacc90e ,
+		ns4:fed3a6e4-2389-4c17-be39-4a2f8ba3291b ,
+		<iot#7e3b5f0a-6d3f-46e9-a6f7-ac140e76d674> ,
+		ns4:aea6e423-2df1-460f-a9fe-59efceb4cdf5 ,
+		ns4:d3a257e9-a31f-4c8c-a946-b2617304943d ;
+	ns3:vendor	<iot#92de07c9-6b90-4437-9d05-1e88291722f3> .
+<iot#80f2e1b9-30f3-423a-a626-603a8850426b>	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatFlag	"0-255" ;
+	ns3:hasFormatinfoForField	ns4:b2a95602-f7fe-4c28-ba39-0f0c6c7fed94 .
+<iot#821f4400-fb8d-4ad3-a2de-e0d2e26eb78d>	rdf:type	ns3:DeviceType ;
+	ns3:name	"ZWay-Thermostat" ;
+	ns3:description	"zway thermostat" ;
+	ns3:hasDeviceClass	ns4:c2110086-0f65-4c29-b2d8-e66a334f2182 ;
+	ns3:hasService	<iot#5eb6eeaa-346e-4c74-a0e0-00ae20599553> ,
+		<iot#19161683-f780-4fd2-86bf-d849510e5fc2> ;
+	ns3:vendor	<iot#92de07c9-6b90-4437-9d05-1e88291722f3> .
+<iot#825abcb6-2611-4f72-b9d7-aa0182f6e05c>	rdf:type	ns3:Service ;
+	ns3:name	"on_off_bri_sat_hue" ;
+	ns3:description	"Turn a Hue light on or off and set brightness, saturation and hue values." ;
+	ns3:hasInput	ns4:a395c0d9-c175-4350-83b5-580244f07d79 ;
+	ns3:hasOutput	<iot#7794ff5b-f796-4e25-892b-7b5f6cfe62da> ;
+	ns3:hasProtocol	ns4:d6a462c5-d4e0-4396-b3f3-28cd37b647a8 ;
+	ns3:hasServiceType	ns3:Actuator ;
+	ns3:url	"on_off_bri_sat_hue" .
+<iot#849b5295-2667-48db-b873-a78c100f2f8d>	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	ns4:a59ae5da-8558-4c8d-9c78-5075545150b3 .
+<iot#856da917-7f72-489c-bab4-1580966244cc>	rdf:type	ns3:MsgSegmentAssignment ;
+	ns3:name	"metrics" ;
+	ns3:hasFormat	ns3:json ;
+	ns3:hasFormatInfo	<iot#48ab846b-fb9e-4fde-85a2-2427c900e3f8> ,
+		<iot#6af4c918-eadd-413e-a189-9212d4eea718> ,
+		<iot#7a766823-6311-4276-a00c-ee170a43d96d> ,
+		ns4:e3d21f50-8b01-487f-81f9-008fc790bda4 ;
+	ns3:hasMsgSegment	ns4:fb88ab4d-a23b-4c70-a81f-995f35ca9d2c ;
+	ns3:hasTypeAssigned	<iot#65b4607a-e47a-468d-8d70-5c812378db64> .
+<iot#877e576d-c12a-469c-82fb-c3738322fce4>	rdf:type	ns3:MsgSegmentAssignment ;
+	ns3:name	"value" ;
+	ns3:hasFormat	ns3:json ;
+	ns3:hasFormatInfo	ns4:bf7bc509-e0d1-4cf8-ad56-ea5b2117056b ;
+	ns3:hasMsgSegment	<iot#88cd5b0e-a451-4070-a20d-464ee23742dd> ;
+	ns3:hasTypeAssigned	<iot#1b06e6fa-8f6b-4ca2-ab04-9596e0d425fa> .
+<iot#87b62ba7-5fe4-4682-b7d0-1b02726d42d3>	rdf:type	ns3:Service ;
+	ns3:name	"upstart" ;
+	ns3:description	"upstart" ;
+	ns3:hasProtocol	ns4:fec6297b-1dc3-473a-a1a4-5625e36913ec ;
+	ns3:hasServiceType	ns3:Actuator ;
+	ns3:url	"upstart" .
+<iot#88081021-810f-4eb7-9caf-33b5d03738ba>	rdf:type	ns3:FieldType ;
+	ns3:name	"title" ;
+	ns3:hasValueType	ns4:c8c36810-c8e0-403e-b00f-187414a84ccd .
+<iot#88cd5b0e-a451-4070-a20d-464ee23742dd>	rdf:type	ns3:MsgSegment ;
+	ns3:name	"data" .
+<iot#89202c70-64e2-4786-8d18-0d307f32cf1b>	rdf:type	ns3:ValueType ;
+	ns3:name	"ZWay-Metrics-Ls" ;
+	ns3:description	"zway metrics with level as string (\"on\" || \"off\")" ;
+	ns3:hasBaseType	ns3:structure ;
+	ns3:hasField	<iot#73f93dbf-e8bd-423f-ab68-fa69c9d16f00> .
+<iot#8ee6436c-4eda-4d49-a432-ce9342b21454>	rdf:type	ns3:MsgSegment ;
+	ns3:name	"topic" .
+<iot#9083ff53-97a5-4e97-a66f-1625982f54c2>	rdf:type	ns3:FieldType ;
+	ns3:name	"level" ;
+	ns3:hasValueType	<iot#6e391de6-e4cb-4728-a80e-425239d8ce17> .
+<iot#9095fd3b-2a8f-4f46-bd1c-dfa3d5bace88>	rdf:type	ns3:DeviceType ;
+	ns3:name	"ZWay-SensorMultilevel" ;
+	ns3:description	"zway sensorMultilevel" ;
+	ns3:hasDeviceClass	ns4:e593e974-3c86-4437-b627-f43260164957 ;
+	ns3:hasService	<iot#95dcb5df-d60b-4aaa-acd7-fcc710b9b002> ,
+		ns4:e6a3c21f-8bcd-43f3-b135-fbe9327da3b9 ;
+	ns3:vendor	<iot#92de07c9-6b90-4437-9d05-1e88291722f3> .
+<iot#90bb9cfe-f220-4bca-82fd-80acd79c5dcf>	rdf:type	ns3:FieldType ;
+	ns3:name	"level" ;
+	ns3:hasValueType	ns4:ca9093ac-ad0d-4502-9f24-6b9e51a38adf .
+<iot#918cc272-5cc7-4d05-b7e1-1c5fe8ac114e>	rdf:type	ns3:MsgSegmentAssignment ;
+	ns3:name	"metrics" ;
+	ns3:hasFormat	ns3:json ;
+	ns3:hasFormatInfo	ns4:e6da7fb2-cfee-4131-b555-4aa03acbdb20 ,
+		ns4:e543fce2-609d-4d7c-ba61-0437e07e788b ,
+		ns4:e5334976-12d5-4957-8cfc-65617720eccb ,
+		ns4:a4779000-951d-4e94-acd5-dd7ed400b49d ,
+		<iot#849b5295-2667-48db-b873-a78c100f2f8d> ;
+	ns3:hasMsgSegment	ns4:fb88ab4d-a23b-4c70-a81f-995f35ca9d2c ;
+	ns3:hasTypeAssigned	<iot#4ff00c34-7a8a-48e1-8555-73d2aa297685> .
+<iot#9239f86e-9471-4d1a-a282-60a998142ed2>	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	<iot#43982ac9-c3df-4300-952d-ff3c9cfb6cec> .
+<iot#92de07c9-6b90-4437-9d05-1e88291722f3>	rdf:type	ns3:Vendor ;
+	ns3:name	"zway" .
+<iot#939963e5-1ab0-44e0-8fb4-5235fd6f5363>	rdf:type	ns3:ValueType ;
+	ns3:name	"Boolean" ;
+	ns3:description	"Boolean" ;
+	ns3:hasBaseType	xsd:boolean .
+<iot#9405bb9f-d1f7-40ec-b082-a886c810cd58>	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatFlag	"true or false" ;
+	ns3:hasFormatinfoForField	<iot#48059889-2256-4593-ab15-b83b51b6b35b> .
+<iot#9588e11a-1e81-41a1-8937-9bcf2c162828>	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	<iot#73f93dbf-e8bd-423f-ab68-fa69c9d16f00> .
+<iot#95dcb5df-d60b-4aaa-acd7-fcc710b9b002>	rdf:type	ns3:Service ;
+	ns3:name	"update" ;
+	ns3:description	"update device metrics to zway (zwave-controller) as soon as possible" ;
+	ns3:hasProtocol	ns4:fec6297b-1dc3-473a-a1a4-5625e36913ec ;
+	ns3:hasServiceType	ns3:Actuator ;
+	ns3:url	"update" .
+<iot#96b71a5e-298e-4b8a-a44e-e9655dda8961>	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	<iot#5ed39720-4299-4146-a103-00347acd02d5> .
+<iot#9e9382ce-31ae-403a-95e7-7306a41dd533>	rdf:type	ns3:ValueType ;
+	ns3:name	"ZWay-Metrics-Battery" ;
+	ns3:description	"zway metrics for battery with probeTitle,scaleTitle, level, title and updateTime" ;
+	ns3:hasBaseType	ns3:structure ;
+	ns3:hasField	<iot#3b4c468a-e5c4-47e0-b60e-c70d6f786a6e> ,
+		ns4:e8acb8f1-c5ee-47ec-b270-70b82de831eb ,
+		ns4:ead901a4-4b33-4192-8385-a56156a3119d ,
+		ns4:aedf42cd-afee-49e1-8dce-578df2945f9c ,
+		ns4:a927fb86-e96d-4e2a-b880-fbdeeede3077 .
+<iot#9f740ec2-eba7-43f4-b945-7dd25f4cddc0>	rdf:type	ns3:MsgSegmentAssignment ;
+	ns3:name	"status" ;
+	ns3:hasFormat	ns3:json ;
+	ns3:hasMsgSegment	<iot#88cd5b0e-a451-4070-a20d-464ee23742dd> ;
+	ns3:hasTypeAssigned	<iot#01190060-db2e-4ed0-a424-c82b60f981e4> .
+ns4:a046d7aa-0035-46a5-a7cb-887826bdfc28	rdf:type	ns3:FieldType ;
+	ns3:name	"title" ;
+	ns3:hasValueType	ns4:c8c36810-c8e0-403e-b00f-187414a84ccd .
+ns4:a395c0d9-c175-4350-83b5-580244f07d79	rdf:type	ns3:MsgSegmentAssignment ;
+	ns3:name	"value" ;
+	ns3:hasFormat	ns3:json ;
+	ns3:hasFormatInfo	<iot#34ba21f1-c63d-48b2-8dd9-cd127409490b> ,
+		ns4:d7d30750-d5e4-4889-9936-fc4195923535 ,
+		ns4:db200a08-874f-494e-be6a-253a75493725 ,
+		ns4:c7dce51a-2915-42d5-a4f2-70fb82032cbc ;
+	ns3:hasMsgSegment	<iot#88cd5b0e-a451-4070-a20d-464ee23742dd> ;
+	ns3:hasTypeAssigned	<iot#3489a4f0-5135-489d-86f7-6d7b949a2998> .
+ns4:a476fab2-823b-4e8e-8546-6852e8e83089	rdf:type	ns3:Service ;
+	ns3:name	"on_off" ;
+	ns3:description	"Turn a Hue light on or off." ;
+	ns3:hasInput	ns4:b3ad69bd-20ec-4463-9493-09e57048facb ;
+	ns3:hasOutput	<iot#083e54dd-4d5b-4a57-b08b-ba7824541482> ;
+	ns3:hasProtocol	ns4:d6a462c5-d4e0-4396-b3f3-28cd37b647a8 ;
+	ns3:hasServiceType	ns3:Actuator ;
+	ns3:url	"on_off" .
+ns4:a4779000-951d-4e94-acd5-dd7ed400b49d	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	<iot#4d7de275-18dd-4e1f-be6d-a348c6837b3d> .
+ns4:a59ae5da-8558-4c8d-9c78-5075545150b3	rdf:type	ns3:FieldType ;
+	ns3:name	"probeTitle" ;
+	ns3:hasValueType	ns4:c8c36810-c8e0-403e-b00f-187414a84ccd .
+ns4:a61474af-8736-4cbf-8117-0678e10f2ce8	rdf:type	ns3:FieldType ;
+	ns3:name	"title" ;
+	ns3:hasValueType	ns4:c8c36810-c8e0-403e-b00f-187414a84ccd .
+ns4:a7afe8cf-0742-422d-bbf2-5a99ff12fb73	rdf:type	ns3:DeviceClass ;
+	ns3:name	"switchControl" .
+ns4:a927fb86-e96d-4e2a-b880-fbdeeede3077	rdf:type	ns3:FieldType ;
+	ns3:name	"title" ;
+	ns3:hasValueType	ns4:c8c36810-c8e0-403e-b00f-187414a84ccd .
+ns4:a9aed425-ca8b-43fa-a96a-56e24e35ca09	rdf:type	ns3:FieldType ;
+	ns3:name	"level" ;
+	ns3:hasValueType	ns4:d9937444-b064-497f-938b-4751ad662605 .
+ns4:a9e59c94-0f20-444a-9985-eac2c65694dc	rdf:type	ns3:FieldType ;
+	ns3:name	"updateTime" ;
+	ns3:hasValueType	<iot#1e7b210a-da85-4cc0-a450-7a2773923dc3> .
+ns4:ad480197-a04c-40a4-958c-9ad7a68d9a1c	rdf:type	ns3:Service ;
+	ns3:name	"on_off_bri_sat_hue" ;
+	ns3:description	"Turn all light on or off and set brightness, saturation and hue values." ;
+	ns3:hasInput	<iot#28d9d690-4873-4a44-8da1-e4ba3c081371> ;
+	ns3:hasOutput	<iot#9f740ec2-eba7-43f4-b945-7dd25f4cddc0> ;
+	ns3:hasProtocol	ns4:d6a462c5-d4e0-4396-b3f3-28cd37b647a8 ;
+	ns3:hasServiceType	ns3:Actuator ;
+	ns3:url	"group_action_on_off_bri_sat_hue" .
+ns4:ae5ef64c-dfaa-4966-b320-1334ee9c2ed9	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatFlag	"0-255" ;
+	ns3:hasFormatinfoForField	ns4:d25f2965-c722-4a57-8ae4-9debacfe0576 .
+ns4:aea6e423-2df1-460f-a9fe-59efceb4cdf5	rdf:type	ns3:Service ;
+	ns3:name	"min" ;
+	ns3:description	"min" ;
+	ns3:hasProtocol	ns4:fec6297b-1dc3-473a-a1a4-5625e36913ec ;
+	ns3:hasServiceType	ns3:Actuator ;
+	ns3:url	"min" .
+ns4:aedf42cd-afee-49e1-8dce-578df2945f9c	rdf:type	ns3:FieldType ;
+	ns3:name	"probeTitle" ;
+	ns3:hasValueType	ns4:c8c36810-c8e0-403e-b00f-187414a84ccd .
+ns4:b2a95602-f7fe-4c28-ba39-0f0c6c7fed94	rdf:type	ns3:FieldType ;
+	ns3:name	"bri" ;
+	ns3:hasValueType	<iot#01190060-db2e-4ed0-a424-c82b60f981e4> .
+ns4:b2f326ef-e4f1-49a6-b087-f8a8ac1e6b53	rdf:type	ns3:FieldType ;
+	ns3:name	"scaleTitle" ;
+	ns3:hasValueType	ns4:c8c36810-c8e0-403e-b00f-187414a84ccd .
+ns4:b3ad69bd-20ec-4463-9493-09e57048facb	rdf:type	ns3:MsgSegmentAssignment ;
+	ns3:name	"value" ;
+	ns3:hasFormat	ns3:json ;
+	ns3:hasFormatInfo	<iot#2568cb76-1bd6-4752-8c4e-10491d9d4cda> ;
+	ns3:hasMsgSegment	<iot#88cd5b0e-a451-4070-a20d-464ee23742dd> ;
+	ns3:hasTypeAssigned	<iot#1b06e6fa-8f6b-4ca2-ab04-9596e0d425fa> .
+ns4:b81351e3-28f1-4dc9-8471-61f7d930c305	rdf:type	ns3:ValueType ;
+	ns3:name	"Generic-Reading" ;
+	ns3:description	"Generic fields for measurements." ;
+	ns3:hasBaseType	ns3:structure ;
+	ns3:hasField	<iot#1e47e2cb-4c36-4bcf-ab8f-73a5971da4b5> ,
+		<iot#4bbc743f-7d9f-4ac6-b26a-2d4f902c7baf> ,
+		<iot#76ff9d33-7b9d-414a-9e70-507c9cc43a16> .
+ns4:bdc896e8-0cf9-4e2e-981c-336d0e4244ba	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	ns4:aedf42cd-afee-49e1-8dce-578df2945f9c .
+ns4:bf312fdd-7ac6-4917-b2e1-83d4211c9017	rdf:type	ns3:MsgSegmentAssignment ;
+	ns3:name	"metrics" ;
+	ns3:hasFormat	ns3:json ;
+	ns3:hasFormatInfo	ns4:f862d26f-1fd9-4692-902c-862c02feec40 ;
+	ns3:hasMsgSegment	ns4:fb88ab4d-a23b-4c70-a81f-995f35ca9d2c ;
+	ns3:hasTypeAssigned	<iot#4c32ea8c-3d3d-4167-a1a9-960345b478c0> .
+ns4:bf7bc509-e0d1-4cf8-ad56-ea5b2117056b	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatFlag	"true or false" ;
+	ns3:hasFormatinfoForField	<iot#68686cc4-e2d8-4a12-89fc-5900657e99d8> .
+ns4:bf8c0aca-af7e-49cb-a048-092400f88d87	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	<iot#71e5203a-3a60-44e7-9979-60f0a65000ee> .
+ns4:c2110086-0f65-4c29-b2d8-e66a334f2182	rdf:type	ns3:DeviceClass ;
+	ns3:name	"thermostat" .
+ns4:c61563e3-a2aa-452b-ad47-e128dbecd9a9	rdf:type	ns3:Service ;
+	ns3:name	"off" ;
+	ns3:description	"off" ;
+	ns3:hasProtocol	ns4:fec6297b-1dc3-473a-a1a4-5625e36913ec ;
+	ns3:hasServiceType	ns3:Actuator ;
+	ns3:url	"off" .
+ns4:c748c65a-50c0-401a-a0e0-4573a2843317	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	<iot#88081021-810f-4eb7-9caf-33b5d03738ba> .
+ns4:c7dce51a-2915-42d5-a4f2-70fb82032cbc	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatFlag	"0-255" ;
+	ns3:hasFormatinfoForField	ns4:b2a95602-f7fe-4c28-ba39-0f0c6c7fed94 .
+ns4:c8c36810-c8e0-403e-b00f-187414a84ccd	rdf:type	ns3:ValueType ;
+	ns3:name	"text" ;
+	ns3:description	"text" ;
+	ns3:hasBaseType	xsd:string .
+ns4:ca9093ac-ad0d-4502-9f24-6b9e51a38adf	rdf:type	ns3:ValueType ;
+	ns3:name	"ZWay-Level-Float" ;
+	ns3:description	"zway metrics level as float" ;
+	ns3:hasBaseType	xsd:decimal .
+ns4:cb0dc896-6d89-4e0c-ac59-33eceed512b0	rdf:type	ns3:ValueType ;
+	ns3:name	"float" ;
+	ns3:description	"float" ;
+	ns3:hasBaseType	xsd:decimal .
+ns4:cb6029fd-f294-4762-a07e-26a8c01c7213	rdf:type	ns3:FieldType ;
+	ns3:name	"title" ;
+	ns3:hasValueType	ns4:c8c36810-c8e0-403e-b00f-187414a84ccd .
+ns4:cfa8b896-128d-463a-aaec-ebe627c4cc7a	rdf:type	ns3:FieldType ;
+	ns3:name	"updateTime" ;
+	ns3:hasValueType	<iot#1e7b210a-da85-4cc0-a450-7a2773923dc3> .
+ns4:d25f2965-c722-4a57-8ae4-9debacfe0576	rdf:type	ns3:FieldType ;
+	ns3:name	"sat" ;
+	ns3:hasValueType	<iot#01190060-db2e-4ed0-a424-c82b60f981e4> .
+ns4:d3a257e9-a31f-4c8c-a946-b2617304943d	rdf:type	ns3:Service ;
+	ns3:name	"decrease" ;
+	ns3:description	"decrease" ;
+	ns3:hasProtocol	ns4:fec6297b-1dc3-473a-a1a4-5625e36913ec ;
+	ns3:hasServiceType	ns3:Actuator ;
+	ns3:url	"decrease" .
+ns4:d6a462c5-d4e0-4396-b3f3-28cd37b647a8	rdf:type	ns3:Protocol ;
+	ns3:name	"standard-connector" ;
+	ns3:description	"Generic protocol for transporting data and metadata." ;
+	ns3:hasMsgSegment	<iot#88cd5b0e-a451-4070-a20d-464ee23742dd> ,
+		<iot#37ff5298-a7dd-4744-9080-7cfdbda5dc72> ;
+	ns3:protocol_handler_url	"connector" .
+ns4:d79f1c9c-f02f-428c-a5f8-efc3e43f46fb	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	ns4:d930dd4d-03d1-4ab0-bd44-781bac4414a9 .
+ns4:d7a75a8e-4008-4f9d-ba97-6f2047d7d17e	rdf:type	ns3:Service ;
+	ns3:name	"downstop" ;
+	ns3:description	"downstop" ;
+	ns3:hasProtocol	ns4:fec6297b-1dc3-473a-a1a4-5625e36913ec ;
+	ns3:hasServiceType	ns3:Actuator ;
+	ns3:url	"downstop" .
+ns4:d7d30750-d5e4-4889-9936-fc4195923535	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatFlag	"0-255" ;
+	ns3:hasFormatinfoForField	ns4:d25f2965-c722-4a57-8ae4-9debacfe0576 .
+ns4:d8b466a1-6e50-4b3b-9119-4e72a9d9b6a3	rdf:type	ns3:Service ;
+	ns3:name	"update" ;
+	ns3:description	"update device metrics to zway (zwave-controller) as soon as possible" ;
+	ns3:hasProtocol	ns4:fec6297b-1dc3-473a-a1a4-5625e36913ec ;
+	ns3:hasServiceType	ns3:Actuator ;
+	ns3:url	"update" .
+ns4:d930dd4d-03d1-4ab0-bd44-781bac4414a9	rdf:type	ns3:FieldType ;
+	ns3:name	"scaleTitle" ;
+	ns3:hasValueType	ns4:c8c36810-c8e0-403e-b00f-187414a84ccd .
+ns4:d98008c4-b9ec-4265-b476-e6c769e914ae	rdf:type	ns3:Vendor ;
+	ns3:name	"Philips" .
+ns4:d9937444-b064-497f-938b-4751ad662605	rdf:type	ns3:ValueType ;
+	ns3:name	"ZWay-Level-Int" ;
+	ns3:description	"zway metrics level as integer" ;
+	ns3:hasBaseType	xsd:integer .
+ns4:db16382e-375b-4c5f-afc3-f231f80b13b0	rdf:type	ns3:Service ;
+	ns3:name	"reading" ;
+	ns3:description	"push reading" ;
+	ns3:hasOutput	<iot#791fc7b8-f641-49ca-af9e-7db01480dc56> ;
+	ns3:hasProtocol	ns4:d6a462c5-d4e0-4396-b3f3-28cd37b647a8 ;
+	ns3:hasServiceType	ns3:Sensor ;
+	ns3:url	"reading" .
+ns4:db200a08-874f-494e-be6a-253a75493725	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatFlag	"true or false" ;
+	ns3:hasFormatinfoForField	<iot#48059889-2256-4593-ab15-b83b51b6b35b> .
+ns4:dc3c326c-8420-4af1-be0d-dcabfdacc90e	rdf:type	ns3:Service ;
+	ns3:name	"sepl_get" ;
+	ns3:description	"get currently known device metrics" ;
+	ns3:hasOutput	<iot#2c64321e-fdba-4bf2-ba9e-edccde9a3e14> ;
+	ns3:hasProtocol	ns4:fec6297b-1dc3-473a-a1a4-5625e36913ec ;
+	ns3:hasServiceType	ns3:Sensor ;
+	ns3:url	"sepl_get" .
+ns4:deb16d2f-fbea-44c0-8339-e984ad661faf	rdf:type	ns3:Vendor ;
+	ns3:name	"deCONZ" .
+ns4:deb8c74e-d556-4ab6-b2d8-4f1a74d528a6	rdf:type	ns3:Service ;
+	ns3:name	"on" ;
+	ns3:description	"on" ;
+	ns3:hasProtocol	ns4:fec6297b-1dc3-473a-a1a4-5625e36913ec ;
+	ns3:hasServiceType	ns3:Actuator ;
+	ns3:url	"on" .
+ns4:df3e8406-8667-444a-b04d-1267a0434174	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	ns4:cb6029fd-f294-4762-a07e-26a8c01c7213 .
+ns4:e1c246a0-d9f3-40ce-ac3a-8ac2ea0091b2	rdf:type	ns3:Service ;
+	ns3:name	"increase" ;
+	ns3:description	"increase" ;
+	ns3:hasProtocol	ns4:fec6297b-1dc3-473a-a1a4-5625e36913ec ;
+	ns3:hasServiceType	ns3:Actuator ;
+	ns3:url	"increase" .
+ns4:e3484450-1ee2-4a42-8289-d97858158971	rdf:type	ns3:DeviceType ;
+	ns3:name	"ZWay-SensorBinary" ;
+	ns3:description	"zway sensorBinary" ;
+	ns3:hasDeviceClass	<iot#74806075-4c2a-47a3-9694-685de26add3d> ;
+	ns3:hasService	<iot#1710c870-04c8-403f-8788-95f953eccf1e> ,
+		ns4:d8b466a1-6e50-4b3b-9119-4e72a9d9b6a3 ;
+	ns3:vendor	<iot#92de07c9-6b90-4437-9d05-1e88291722f3> .
+ns4:e3d21f50-8b01-487f-81f9-008fc790bda4	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	<iot#5412ec74-b5e1-4b9e-b711-6d7cac533531> .
+ns4:e449c133-29f0-4de9-a756-30ba0d0c0a73	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	<iot#9083ff53-97a5-4e97-a66f-1625982f54c2> .
+ns4:e5334976-12d5-4957-8cfc-65617720eccb	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	ns4:b2f326ef-e4f1-49a6-b087-f8a8ac1e6b53 .
+ns4:e543fce2-609d-4d7c-ba61-0437e07e788b	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	<iot#90bb9cfe-f220-4bca-82fd-80acd79c5dcf> .
+ns4:e593e974-3c86-4437-b627-f43260164957	rdf:type	ns3:DeviceClass ;
+	ns3:name	"sensorMultilevel" .
+ns4:e6a3c21f-8bcd-43f3-b135-fbe9327da3b9	rdf:type	ns3:Service ;
+	ns3:name	"sepl_get" ;
+	ns3:description	"get currently known device metrics" ;
+	ns3:hasOutput	<iot#918cc272-5cc7-4d05-b7e1-1c5fe8ac114e> ;
+	ns3:hasProtocol	ns4:fec6297b-1dc3-473a-a1a4-5625e36913ec ;
+	ns3:hasServiceType	ns3:Sensor ;
+	ns3:url	"sepl_get" .
+ns4:e6da7fb2-cfee-4131-b555-4aa03acbdb20	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	<iot#2161f823-a4ea-4949-9c01-a588a7dcc8f1> .
+ns4:e8acb8f1-c5ee-47ec-b270-70b82de831eb	rdf:type	ns3:FieldType ;
+	ns3:name	"scaleTitle" ;
+	ns3:hasValueType	ns4:c8c36810-c8e0-403e-b00f-187414a84ccd .
+ns4:ea0a0286-85a4-4885-9884-42209bfbda03	rdf:type	ns3:MsgSegmentAssignment ;
+	ns3:name	"metrics" ;
+	ns3:hasFormat	ns3:json ;
+	ns3:hasFormatInfo	<iot#378ee116-f319-43c2-b5f3-693a4f037d3f> ,
+		<iot#523041ef-368f-40e2-8c76-a61efb283f84> ,
+		ns4:ea31277c-413a-487d-b9dc-c6f519ffc745 ,
+		<iot#7e22bb46-a235-4cc3-83ff-baecacd2f3df> ;
+	ns3:hasMsgSegment	ns4:fb88ab4d-a23b-4c70-a81f-995f35ca9d2c ;
+	ns3:hasTypeAssigned	<iot#086d79c5-4f8e-4fef-ae05-b59020f194b7> .
+ns4:ea31277c-413a-487d-b9dc-c6f519ffc745	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	<iot#52d301c8-53dc-453d-bfaf-0aa7bc03ae88> .
+ns4:ead901a4-4b33-4192-8385-a56156a3119d	rdf:type	ns3:FieldType ;
+	ns3:name	"updateTime" ;
+	ns3:hasValueType	<iot#1e7b210a-da85-4cc0-a450-7a2773923dc3> .
+ns4:ec1c4f0a-e3ca-4c22-bd47-18f28096c329	rdf:type	ns3:Service ;
+	ns3:name	"off" ;
+	ns3:description	"off" ;
+	ns3:hasProtocol	ns4:fec6297b-1dc3-473a-a1a4-5625e36913ec ;
+	ns3:hasServiceType	ns3:Actuator ;
+	ns3:url	"off" .
+ns4:ecc73509-e4eb-4ec6-8488-7c89b6f3479c	rdf:type	ns3:FieldType ;
+	ns3:name	"level" ;
+	ns3:hasValueType	<iot#6e391de6-e4cb-4728-a80e-425239d8ce17> .
+ns4:ee5fadb8-aeda-4f4c-a74f-b8b9a43fa7b0	rdf:type	ns3:MsgSegmentAssignment ;
+	ns3:name	"status" ;
+	ns3:hasFormat	ns3:json ;
+	ns3:hasMsgSegment	<iot#88cd5b0e-a451-4070-a20d-464ee23742dd> ;
+	ns3:hasTypeAssigned	<iot#01190060-db2e-4ed0-a424-c82b60f981e4> .
+ns4:ef4966e5-28d0-4e81-8054-85dde9857012	rdf:type	ns3:DeviceClass ;
+	ns3:name	"switchMultilevel" .
+ns4:f02f55d2-d68b-4d3d-8403-4ea1404b0e80	rdf:type	ns3:ValueType ;
+	ns3:name	"ZWay-Metrics-LsTU" ;
+	ns3:description	"zway metrics with level (string) , title and updateTime" ;
+	ns3:hasBaseType	ns3:structure ;
+	ns3:hasField	<iot#5ed39720-4299-4146-a103-00347acd02d5> ,
+		<iot#88081021-810f-4eb7-9caf-33b5d03738ba> ,
+		<iot#9083ff53-97a5-4e97-a66f-1625982f54c2> .
+ns4:f114d992-5361-40ca-b1c7-db6dc42569c4	rdf:type	ns3:FieldType ;
+	ns3:name	"level" ;
+	ns3:hasValueType	ns4:d9937444-b064-497f-938b-4751ad662605 .
+ns4:f15df4d2-0d33-4b18-9a77-d88444515bb0	rdf:type	ns3:DeviceClass ;
+	ns3:name	"switchBinary" .
+ns4:f17db031-090f-4e3d-a314-a8d3c416847e	rdf:type	ns3:DeviceClass ;
+	ns3:name	"Light" .
+ns4:f4cfcd68-cd86-4551-bcdd-5f33f69d071c	rdf:type	ns3:FieldType ;
+	ns3:name	"level" ;
+	ns3:hasValueType	ns4:d9937444-b064-497f-938b-4751ad662605 .
+ns4:f52749e2-aa11-4187-acef-1de317f19e9f	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	<iot#4bbc743f-7d9f-4ac6-b26a-2d4f902c7baf> .
+ns4:f862d26f-1fd9-4692-902c-862c02feec40	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	ns4:f4cfcd68-cd86-4551-bcdd-5f33f69d071c .
+ns4:f89b2a8c-0a4a-4755-9efa-f754a243b4d0	rdf:type	ns3:DeviceType ;
+	ns3:name	"deCONZ-Group" ;
+	ns3:description	"deCONZ group containing compatible smart lights." ;
+	ns3:hasDeviceClass	ns4:f17db031-090f-4e3d-a314-a8d3c416847e ;
+	ns3:hasService	ns4:ad480197-a04c-40a4-958c-9ad7a68d9a1c ,
+		<iot#55007953-ce00-44a8-9f82-255cde921e1c> ;
+	ns3:vendor	ns4:deb16d2f-fbea-44c0-8339-e984ad661faf .
+ns4:fb4c7076-7cbd-47a9-b958-7c98d97a7a7e	rdf:type	ns3:MsgSegmentAssignment ;
+	ns3:name	"metrics" ;
+	ns3:hasFormat	ns3:json ;
+	ns3:hasFormatInfo	ns4:c748c65a-50c0-401a-a0e0-4573a2843317 ,
+		<iot#96b71a5e-298e-4b8a-a44e-e9655dda8961> ,
+		ns4:e449c133-29f0-4de9-a756-30ba0d0c0a73 ;
+	ns3:hasMsgSegment	ns4:fb88ab4d-a23b-4c70-a81f-995f35ca9d2c ;
+	ns3:hasTypeAssigned	ns4:f02f55d2-d68b-4d3d-8403-4ea1404b0e80 .
+ns4:fb5ef22b-3d20-466c-bd00-5617e5c68f8f	rdf:type	ns3:Service ;
+	ns3:name	"exact" ;
+	ns3:description	"exact" ;
+	ns3:hasInput	<iot#1a962c6d-66d5-4986-a0e5-0da25444b0de> ;
+	ns3:hasProtocol	ns4:fec6297b-1dc3-473a-a1a4-5625e36913ec ;
+	ns3:hasServiceType	ns3:Actuator ;
+	ns3:url	"exact" .
+ns4:fb88ab4d-a23b-4c70-a81f-995f35ca9d2c	rdf:type	ns3:MsgSegment ;
+	ns3:name	"metrics" .
+ns4:fec6297b-1dc3-473a-a1a4-5625e36913ec	rdf:type	ns3:Protocol ;
+	ns3:name	"zway-connector" ;
+	ns3:description	"zway connector" ;
+	ns3:hasMsgSegment	ns4:fb88ab4d-a23b-4c70-a81f-995f35ca9d2c ;
+	ns3:protocol_handler_url	"connector" .
+ns4:fed3a6e4-2389-4c17-be39-4a2f8ba3291b	rdf:type	ns3:Service ;
+	ns3:name	"exact" ;
+	ns3:description	"exact" ;
+	ns3:hasInput	ns4:bf312fdd-7ac6-4917-b2e1-83d4211c9017 ;
+	ns3:hasProtocol	ns4:fec6297b-1dc3-473a-a1a4-5625e36913ec ;
+	ns3:hasServiceType	ns3:Actuator ;
+	ns3:url	"exact" .
+ns4:f90edc70-2b12-4dca-91e7-9a827a0f7e48	rdf:type	ns3:DeviceType ;
+	ns3:name	"App" ;
+	ns3:description	"App on a smartphone which pushes phone data like GPS to the platform" ;
+	ns3:hasDeviceClass	<iot#74806075-4c2a-47a3-9694-685de26add3d> ;
+	ns3:hasService	<iot#65e17310-2296-4aad-a754-df5abd232b00> ;
+	ns3:vendor	<iot#5883290a-96fb-49fb-850a-02c18fecf688> .
+<iot#5883290a-96fb-49fb-850a-02c18fecf688>	rdf:type	ns3:Vendor ;
+	ns3:name	"App" .
+<iot#65e17310-2296-4aad-a754-df5abd232b00>	rdf:type	ns3:Service ;
+	ns3:name	"location" ;
+	ns3:description	"Location of the user - location and latitide" ;
+	ns3:hasOutput	ns4:c06521ba-faea-4067-a4ff-fb45c1a37d41 ;
+	ns3:hasProtocol	<iot#604e86bf-a5aa-4d5a-9eac-86c2ff503afc> ;
+	ns3:hasServiceType	ns3:Sensor ;
+	ns3:url	"location" ;
+	ns3:endpoint_format	"{{device_uri}}/location" .
+ns4:c06521ba-faea-4067-a4ff-fb45c1a37d41	rdf:type	ns3:MsgSegmentAssignment ;
+	ns3:name	"location" ;
+	ns3:hasFormat	ns3:json ;
+	ns3:hasFormatInfo	ns4:af1a09ce-515c-4ae0-a9f9-61d1d8aa8d75 ,
+		<iot#2b92df47-8624-4743-8f32-aa85c5d1b85d> ;
+	ns3:hasMsgSegment	<iot#08834177-0e22-4dfe-9664-73c005a0e6aa> ;
+	ns3:hasTypeAssigned	ns4:fc01008e-4adc-4880-a0cc-195be5f93e0e .
+ns4:fc01008e-4adc-4880-a0cc-195be5f93e0e	rdf:type	ns3:ValueType ;
+	ns3:name	"location" ;
+	ns3:description	"JSON object containing location data (latitude and longitude)" ;
+	ns3:hasBaseType	ns3:structure ;
+	ns3:hasField	ns4:b5248755-0b26-4ec8-9032-47a53bd3ffbb ,
+		ns4:e51507b9-4cc1-492e-b4cc-e56ce73c6395 .
+ns4:b5248755-0b26-4ec8-9032-47a53bd3ffbb	rdf:type	ns3:FieldType ;
+	ns3:name	"latitude" ;
+	ns3:hasValueType	ns4:ae51bb9c-af3a-495a-aebf-c46469045e05 .
+ns4:ae51bb9c-af3a-495a-aebf-c46469045e05	rdf:type	ns3:ValueType ;
+	ns3:name	"openhab-number" ;
+	ns3:description	"Decimal number like 1" ;
+	ns3:hasBaseType	xsd:decimal .
+ns4:e51507b9-4cc1-492e-b4cc-e56ce73c6395	rdf:type	ns3:FieldType ;
+	ns3:name	"longitude" ;
+	ns3:hasValueType	ns4:ae51bb9c-af3a-495a-aebf-c46469045e05 .
+<iot#2b92df47-8624-4743-8f32-aa85c5d1b85d>	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	ns4:b5248755-0b26-4ec8-9032-47a53bd3ffbb .
+ns4:af1a09ce-515c-4ae0-a9f9-61d1d8aa8d75	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	ns4:e51507b9-4cc1-492e-b4cc-e56ce73c6395 .
+<iot#64fb272a-c3c8-4bea-8c54-ecb235361726>	rdf:type	ns3:DeviceType ;
+	ns3:name	"Lifx-Smart-Light" ;
+	ns3:description	"Lifx-Smart-Light" ;
+	ns3:hasDeviceClass	ns4:f17db031-090f-4e3d-a314-a8d3c416847e ;
+	ns3:hasService	<iot#36a62f66-8d1d-487d-966e-7d8df1582efa> ;
+	ns3:vendor	<iot#1c697e9f-80d6-40fe-b968-32ddde0afa2f> .
+<iot#36a62f66-8d1d-487d-966e-7d8df1582efa>	rdf:type	ns3:Service ;
+	ns3:name	"set_pwr_clr_bri" ;
+	ns3:description	"set color, power, brightness" ;
+	ns3:hasInput	ns4:e2108457-de43-4967-a52e-e69e5fc84167 ;
+	ns3:hasOutput	<iot#06e09ed2-97ff-472c-954e-55438e76b6a0> ;
+	ns3:hasProtocol	ns4:d6a462c5-d4e0-4396-b3f3-28cd37b647a8 ;
+	ns3:hasServiceType	ns3:Actuator ;
+	ns3:url	"set_pwr_clr_bri" .
+ns4:e2108457-de43-4967-a52e-e69e5fc84167	rdf:type	ns3:MsgSegmentAssignment ;
+	ns3:name	"value" ;
+	ns3:hasFormat	ns3:json ;
+	ns3:hasFormatInfo	<iot#87007342-07df-4460-b73a-9201ab553721> ,
+		ns4:bb1a01be-bd46-459b-ab73-55f9ef18e630 ,
+		<iot#81f34600-ea44-47f0-8347-b960060fac82> ;
+	ns3:hasMsgSegment	<iot#88cd5b0e-a451-4070-a20d-464ee23742dd> ;
+	ns3:hasTypeAssigned	<iot#47af1e63-c234-463e-bf6a-9c8cff262578> .
+<iot#47af1e63-c234-463e-bf6a-9c8cff262578>	rdf:type	ns3:ValueType ;
+	ns3:name	"Lifx-pwr-clr-bri-Fields" ;
+	ns3:description	"Lifx state fields" ;
+	ns3:hasBaseType	ns3:structure ;
+	ns3:hasField	<iot#89127c57-ac2b-404c-9236-229fdbec5d20> ,
+		<iot#7c97662e-7ed2-4fed-9f47-191b11e4fb96> ,
+		<iot#58f9f5c6-f19f-4074-9227-3e300e6da09a> .
+<iot#7c97662e-7ed2-4fed-9f47-191b11e4fb96>	rdf:type	ns3:FieldType ;
+	ns3:name	"power" ;
+	ns3:hasValueType	ns4:c8c36810-c8e0-403e-b00f-187414a84ccd .
+<iot#58f9f5c6-f19f-4074-9227-3e300e6da09a>	rdf:type	ns3:FieldType ;
+	ns3:name	"color" ;
+	ns3:hasValueType	ns4:c8c36810-c8e0-403e-b00f-187414a84ccd .
+<iot#89127c57-ac2b-404c-9236-229fdbec5d20>	rdf:type	ns3:FieldType ;
+	ns3:name	"brightness" ;
+	ns3:hasValueType	ns4:cb0dc896-6d89-4e0c-ac59-33eceed512b0 .
+<iot#81f34600-ea44-47f0-8347-b960060fac82>	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	<iot#7c97662e-7ed2-4fed-9f47-191b11e4fb96> .
+<iot#87007342-07df-4460-b73a-9201ab553721>	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	<iot#58f9f5c6-f19f-4074-9227-3e300e6da09a> .
+ns4:bb1a01be-bd46-459b-ab73-55f9ef18e630	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	<iot#89127c57-ac2b-404c-9236-229fdbec5d20> .
+<iot#06e09ed2-97ff-472c-954e-55438e76b6a0>	rdf:type	ns3:MsgSegmentAssignment ;
+	ns3:name	"status" ;
+	ns3:hasFormat	ns3:json ;
+	ns3:hasMsgSegment	<iot#88cd5b0e-a451-4070-a20d-464ee23742dd> ;
+	ns3:hasTypeAssigned	<iot#01190060-db2e-4ed0-a424-c82b60f981e4> .
+<iot#1c697e9f-80d6-40fe-b968-32ddde0afa2f>	rdf:type	ns3:Vendor ;
+	ns3:name	"Lifx" .
+<iot#76523381-1b19-4280-9028-c3fa30899996>	rdf:type	ns3:DeviceType ;
+	ns3:name	"Dyson-Fan" ;
+	ns3:description	"Dyson fan" ;
+	ns3:hasDeviceClass	<iot#529c4261-52eb-4ccd-b472-1d14aecbcde6> ;
+	ns3:hasService	<iot#2c0e850c-0fd9-428e-8871-6b77263ca380> ,
+		ns4:fa943706-d900-4403-b85a-d947d533c301 ,
+		ns4:c729fe03-66c5-465d-be15-ddc19cbed036 ,
+		<iot#7639250e-b879-4fd1-a3d3-17951b706081> ,
+		<iot#20c5d5a2-aa89-4743-b9d2-780fb1620e27> ;
+	ns3:vendor	<iot#811f6568-f323-428f-a325-6cbb367c3397> .
+<iot#529c4261-52eb-4ccd-b472-1d14aecbcde6>	rdf:type	ns3:DeviceClass ;
+	ns3:name	"Fan" .
+ns4:c729fe03-66c5-465d-be15-ddc19cbed036	rdf:type	ns3:Service ;
+	ns3:name	"set_state" ;
+	ns3:description	"set fan state" ;
+	ns3:hasInput	<iot#7a2ce73a-8b44-468b-bf36-59c27a208c29> ;
+	ns3:hasOutput	ns4:ec8c8a94-6f94-448f-bdbc-bfb537b391cd ;
+	ns3:hasProtocol	ns4:d6a462c5-d4e0-4396-b3f3-28cd37b647a8 ;
+	ns3:hasServiceType	ns3:Actuator ;
+	ns3:url	"set_state" .
+<iot#7a2ce73a-8b44-468b-bf36-59c27a208c29>	rdf:type	ns3:MsgSegmentAssignment ;
+	ns3:name	"value" ;
+	ns3:hasFormat	ns3:json ;
+	ns3:hasFormatInfo	ns4:e3b493a0-82f2-47dd-a105-0b37450c4ce7 ,
+		<iot#692c0f60-f9fb-4e98-8cab-bfd3d82b3ec3> ,
+		<iot#683c8974-1a54-40b8-a32d-f9e5ca0f8e5d> ,
+		ns4:a7bc0ede-2ae0-45d5-9361-a7580b17c83d ,
+		<iot#132f15d2-a268-4e51-a9ef-1e87d43370e8> ,
+		<iot#5f8df3f0-5104-49a8-bc7f-a6603443f8b1> ,
+		ns4:e1dda875-bb70-47b5-82e7-14202600a724 ,
+		<iot#5d0d1cc5-dd3a-44ac-bf6a-0c2123ab0eb2> ,
+		ns4:d3a2f25e-71be-42c4-8950-d8d4f567a365 ,
+		<iot#3238f9d3-ec37-4e74-a39e-cc7c1d4bf072> ,
+		<iot#21f2b7ea-252d-4bc1-8be6-736f90c3ba17> ;
+	ns3:hasMsgSegment	<iot#88cd5b0e-a451-4070-a20d-464ee23742dd> ;
+	ns3:hasTypeAssigned	<iot#7770d78d-4da5-45f9-8b30-5f26e1eef0d6> .
+<iot#7770d78d-4da5-45f9-8b30-5f26e1eef0d6>	rdf:type	ns3:ValueType ;
+	ns3:name	"Dyson-State-Fields" ;
+	ns3:description	"dyson state fields" ;
+	ns3:hasBaseType	ns3:structure ;
+	ns3:hasField	<iot#1436193a-b97d-43aa-8b59-5076748b0b08> ,
+		<iot#1a8bd264-ede0-4a69-b35a-9b0464be53ad> ,
+		<iot#9f05274d-dd26-4778-8e5b-8db3fd28ac4a> ,
+		ns4:f3c28bac-4020-4e8a-b47b-a68e54e60fc2 ,
+		<iot#083d8171-975e-4f9f-b3a9-9387fac8e252> ,
+		ns4:c4dd2ed9-8c40-43a2-bf0c-e1ddae490b62 ,
+		<iot#39136ac4-dd56-46b6-986a-700df2a1300a> ,
+		<iot#8b2f8823-822d-4647-b2cf-c83495a9d243> ,
+		<iot#665b560b-6294-482c-8ab9-e683ad8d9168> ,
+		ns4:e1f95324-cc8e-416e-aa13-2d70a7c7aa9d ,
+		ns4:db29fdd6-72c5-45d9-a1cf-3f1aee76c4df .
+<iot#1436193a-b97d-43aa-8b59-5076748b0b08>	rdf:type	ns3:FieldType ;
+	ns3:name	"fmod" ;
+	ns3:hasValueType	ns4:c8c36810-c8e0-403e-b00f-187414a84ccd .
+ns4:f3c28bac-4020-4e8a-b47b-a68e54e60fc2	rdf:type	ns3:FieldType ;
+	ns3:name	"fnsp" ;
+	ns3:hasValueType	ns4:c8c36810-c8e0-403e-b00f-187414a84ccd .
+<iot#083d8171-975e-4f9f-b3a9-9387fac8e252>	rdf:type	ns3:FieldType ;
+	ns3:name	"oson" ;
+	ns3:hasValueType	ns4:c8c36810-c8e0-403e-b00f-187414a84ccd .
+ns4:c4dd2ed9-8c40-43a2-bf0c-e1ddae490b62	rdf:type	ns3:FieldType ;
+	ns3:name	"sltm" ;
+	ns3:hasValueType	ns4:c8c36810-c8e0-403e-b00f-187414a84ccd .
+<iot#39136ac4-dd56-46b6-986a-700df2a1300a>	rdf:type	ns3:FieldType ;
+	ns3:name	"rhtm" ;
+	ns3:hasValueType	ns4:c8c36810-c8e0-403e-b00f-187414a84ccd .
+<iot#8b2f8823-822d-4647-b2cf-c83495a9d243>	rdf:type	ns3:FieldType ;
+	ns3:name	"rstf" ;
+	ns3:hasValueType	ns4:c8c36810-c8e0-403e-b00f-187414a84ccd .
+<iot#665b560b-6294-482c-8ab9-e683ad8d9168>	rdf:type	ns3:FieldType ;
+	ns3:name	"qtar" ;
+	ns3:hasValueType	ns4:c8c36810-c8e0-403e-b00f-187414a84ccd .
+ns4:e1f95324-cc8e-416e-aa13-2d70a7c7aa9d	rdf:type	ns3:FieldType ;
+	ns3:name	"nmod" ;
+	ns3:hasValueType	ns4:c8c36810-c8e0-403e-b00f-187414a84ccd .
+ns4:db29fdd6-72c5-45d9-a1cf-3f1aee76c4df	rdf:type	ns3:FieldType ;
+	ns3:name	"hmod" ;
+	ns3:hasValueType	ns4:c8c36810-c8e0-403e-b00f-187414a84ccd .
+<iot#1a8bd264-ede0-4a69-b35a-9b0464be53ad>	rdf:type	ns3:FieldType ;
+	ns3:name	"ffoc" ;
+	ns3:hasValueType	ns4:c8c36810-c8e0-403e-b00f-187414a84ccd .
+<iot#9f05274d-dd26-4778-8e5b-8db3fd28ac4a>	rdf:type	ns3:FieldType ;
+	ns3:name	"hmax" ;
+	ns3:hasValueType	ns4:c8c36810-c8e0-403e-b00f-187414a84ccd .
+ns4:e3b493a0-82f2-47dd-a105-0b37450c4ce7	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	<iot#1436193a-b97d-43aa-8b59-5076748b0b08> .
+<iot#692c0f60-f9fb-4e98-8cab-bfd3d82b3ec3>	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	ns4:f3c28bac-4020-4e8a-b47b-a68e54e60fc2 .
+<iot#132f15d2-a268-4e51-a9ef-1e87d43370e8>	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	<iot#083d8171-975e-4f9f-b3a9-9387fac8e252> .
+<iot#5f8df3f0-5104-49a8-bc7f-a6603443f8b1>	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	ns4:c4dd2ed9-8c40-43a2-bf0c-e1ddae490b62 .
+<iot#683c8974-1a54-40b8-a32d-f9e5ca0f8e5d>	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	<iot#39136ac4-dd56-46b6-986a-700df2a1300a> .
+ns4:a7bc0ede-2ae0-45d5-9361-a7580b17c83d	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	<iot#8b2f8823-822d-4647-b2cf-c83495a9d243> .
+ns4:d3a2f25e-71be-42c4-8950-d8d4f567a365	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	<iot#665b560b-6294-482c-8ab9-e683ad8d9168> .
+<iot#3238f9d3-ec37-4e74-a39e-cc7c1d4bf072>	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	ns4:e1f95324-cc8e-416e-aa13-2d70a7c7aa9d .
+ns4:e1dda875-bb70-47b5-82e7-14202600a724	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	ns4:db29fdd6-72c5-45d9-a1cf-3f1aee76c4df .
+<iot#5d0d1cc5-dd3a-44ac-bf6a-0c2123ab0eb2>	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	<iot#1a8bd264-ede0-4a69-b35a-9b0464be53ad> .
+<iot#21f2b7ea-252d-4bc1-8be6-736f90c3ba17>	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	<iot#9f05274d-dd26-4778-8e5b-8db3fd28ac4a> .
+ns4:ec8c8a94-6f94-448f-bdbc-bfb537b391cd	rdf:type	ns3:MsgSegmentAssignment ;
+	ns3:name	"status" ;
+	ns3:hasFormat	ns3:json ;
+	ns3:hasMsgSegment	<iot#88cd5b0e-a451-4070-a20d-464ee23742dd> ;
+	ns3:hasTypeAssigned	<iot#01190060-db2e-4ed0-a424-c82b60f981e4> .
+ns4:fa943706-d900-4403-b85a-d947d533c301	rdf:type	ns3:Service ;
+	ns3:name	"humidity_reading" ;
+	ns3:description	"humidity reading" ;
+	ns3:hasOutput	<iot#1f79cb3d-f853-4b50-a0ae-653c6536ac5e> ;
+	ns3:hasProtocol	ns4:d6a462c5-d4e0-4396-b3f3-28cd37b647a8 ;
+	ns3:hasServiceType	ns3:Sensor ;
+	ns3:url	"humidity_reading" .
+<iot#1f79cb3d-f853-4b50-a0ae-653c6536ac5e>	rdf:type	ns3:MsgSegmentAssignment ;
+	ns3:name	"reading" ;
+	ns3:hasFormat	ns3:json ;
+	ns3:hasFormatInfo	<iot#6d988f6a-0066-4a8f-a2a0-576199de1f5d> ,
+		<iot#1c466dcf-0e06-436d-94df-518a4eee56fe> ,
+		ns4:a67c8c62-9f24-45c6-9dae-29b45d432dd5 ;
+	ns3:hasMsgSegment	<iot#88cd5b0e-a451-4070-a20d-464ee23742dd> ;
+	ns3:hasTypeAssigned	ns4:b81351e3-28f1-4dc9-8471-61f7d930c305 .
+<iot#1c466dcf-0e06-436d-94df-518a4eee56fe>	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	<iot#1e47e2cb-4c36-4bcf-ab8f-73a5971da4b5> .
+ns4:a67c8c62-9f24-45c6-9dae-29b45d432dd5	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	<iot#4bbc743f-7d9f-4ac6-b26a-2d4f902c7baf> .
+<iot#6d988f6a-0066-4a8f-a2a0-576199de1f5d>	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	<iot#76ff9d33-7b9d-414a-9e70-507c9cc43a16> .
+<iot#2c0e850c-0fd9-428e-8871-6b77263ca380>	rdf:type	ns3:Service ;
+	ns3:name	"volatile_comp_reading" ;
+	ns3:description	"volatile_comp_reading" ;
+	ns3:hasOutput	<iot#95e520de-08c6-469f-aa51-033983490556> ;
+	ns3:hasProtocol	ns4:d6a462c5-d4e0-4396-b3f3-28cd37b647a8 ;
+	ns3:hasServiceType	ns3:Sensor ;
+	ns3:url	"volatile_comp_reading" .
+<iot#95e520de-08c6-469f-aa51-033983490556>	rdf:type	ns3:MsgSegmentAssignment ;
+	ns3:name	"reading" ;
+	ns3:hasFormat	ns3:json ;
+	ns3:hasFormatInfo	ns4:edfdd39f-184d-4c7f-924f-ffb08d6e50c0 ,
+		ns4:fdc396b4-92f6-47d3-9016-bda0ad289641 ,
+		ns4:e34878d8-8032-44b2-8a52-08d7551f7507 ;
+	ns3:hasMsgSegment	<iot#88cd5b0e-a451-4070-a20d-464ee23742dd> ;
+	ns3:hasTypeAssigned	ns4:b81351e3-28f1-4dc9-8471-61f7d930c305 .
+ns4:e34878d8-8032-44b2-8a52-08d7551f7507	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	<iot#1e47e2cb-4c36-4bcf-ab8f-73a5971da4b5> .
+ns4:edfdd39f-184d-4c7f-924f-ffb08d6e50c0	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	<iot#4bbc743f-7d9f-4ac6-b26a-2d4f902c7baf> .
+ns4:fdc396b4-92f6-47d3-9016-bda0ad289641	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	<iot#76ff9d33-7b9d-414a-9e70-507c9cc43a16> .
+<iot#7639250e-b879-4fd1-a3d3-17951b706081>	rdf:type	ns3:Service ;
+	ns3:name	"temperature_reading" ;
+	ns3:description	"temperature_reading" ;
+	ns3:hasOutput	<iot#91fa4c9c-e887-4c42-9901-4e7cb1c5661b> ;
+	ns3:hasProtocol	ns4:d6a462c5-d4e0-4396-b3f3-28cd37b647a8 ;
+	ns3:hasServiceType	ns3:Sensor ;
+	ns3:url	"temperature_reading" .
+<iot#91fa4c9c-e887-4c42-9901-4e7cb1c5661b>	rdf:type	ns3:MsgSegmentAssignment ;
+	ns3:name	"reading" ;
+	ns3:hasFormat	ns3:json ;
+	ns3:hasFormatInfo	<iot#95276c4a-4868-4c1e-9187-f8becc8e2345> ,
+		ns4:a72c660c-300e-455e-a98b-9336162adbfc ,
+		<iot#645b10be-b997-4c53-9cd1-5f0510b8891e> ;
+	ns3:hasMsgSegment	<iot#88cd5b0e-a451-4070-a20d-464ee23742dd> ;
+	ns3:hasTypeAssigned	ns4:b81351e3-28f1-4dc9-8471-61f7d930c305 .
+<iot#95276c4a-4868-4c1e-9187-f8becc8e2345>	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	<iot#1e47e2cb-4c36-4bcf-ab8f-73a5971da4b5> .
+ns4:a72c660c-300e-455e-a98b-9336162adbfc	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	<iot#4bbc743f-7d9f-4ac6-b26a-2d4f902c7baf> .
+<iot#645b10be-b997-4c53-9cd1-5f0510b8891e>	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	<iot#76ff9d33-7b9d-414a-9e70-507c9cc43a16> .
+<iot#20c5d5a2-aa89-4743-b9d2-780fb1620e27>	rdf:type	ns3:Service ;
+	ns3:name	"dust_reading" ;
+	ns3:description	"dust_reading" ;
+	ns3:hasOutput	ns4:f909be13-48ce-428c-b1c1-2dc31ee76f56 ;
+	ns3:hasProtocol	ns4:d6a462c5-d4e0-4396-b3f3-28cd37b647a8 ;
+	ns3:hasServiceType	ns3:Sensor ;
+	ns3:url	"dust_reading" .
+ns4:f909be13-48ce-428c-b1c1-2dc31ee76f56	rdf:type	ns3:MsgSegmentAssignment ;
+	ns3:name	"reading" ;
+	ns3:hasFormat	ns3:json ;
+	ns3:hasFormatInfo	<iot#33edee49-8a27-41a5-9f28-e3c7a7992dcf> ,
+		ns4:a27033cf-b9b0-4ccc-9963-5fe010132fb4 ,
+		<iot#201bad5b-2939-4720-ba95-89a6b2ea91d4> ;
+	ns3:hasMsgSegment	<iot#88cd5b0e-a451-4070-a20d-464ee23742dd> ;
+	ns3:hasTypeAssigned	ns4:b81351e3-28f1-4dc9-8471-61f7d930c305 .
+<iot#201bad5b-2939-4720-ba95-89a6b2ea91d4>	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	<iot#1e47e2cb-4c36-4bcf-ab8f-73a5971da4b5> .
+<iot#33edee49-8a27-41a5-9f28-e3c7a7992dcf>	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	<iot#4bbc743f-7d9f-4ac6-b26a-2d4f902c7baf> .
+ns4:a27033cf-b9b0-4ccc-9963-5fe010132fb4	rdf:type	ns3:FormatInfo ;
+	ns3:hasFormatinfoForField	<iot#76ff9d33-7b9d-414a-9e70-507c9cc43a16> .
+<iot#811f6568-f323-428f-a325-6cbb367c3397>	rdf:type	ns3:Vendor ;
+	ns3:name	"Dyson" .
