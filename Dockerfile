@@ -1,4 +1,4 @@
-FROM tenforce/virtuoso:virtuoso7.2.0
+FROM tenforce/virtuoso:virtuoso7.2.2
 
 COPY device-repo.ttl /data/toLoad/device-repo.ttl
 COPY iot.ttl /data/toLoad/iot.ttl
